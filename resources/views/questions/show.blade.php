@@ -6,7 +6,9 @@
         <p class="lead">
             {{ $question->description }}
         </p>
-
+        <p>
+            Submitted By: {{ $question->user->name }}, {{ $question->created_at->diffForHumans() }}
+        </p>
         <hr/>
 
         @if ($question->answers->count() > 0)
@@ -16,6 +18,7 @@
                         <p>
                             {{ $answer->content }}
                         </p>
+                        <h6>Answered By {{ $answer->user->name }}, {{ $answer->created_at->diffForHumans() }}</h6>
                     </div>
                 </div>
             @endforeach
