@@ -33,13 +33,18 @@
                 <h3>Answers</h3>
                 @foreach($user->answers as $answer)
                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{ $answer->question->title }}
+                        </div>
                         <div class="panel-body">
                             <p>
+                                <small>{{ $user->name }}'s answer:</small>
                                 {{ $answer->content }}
                             </p>
+                            <a href="{{ route('questions.show', $answer->question->id) }}" class="btn btn-sm btn-link">View
+                                All Answers for this Question</a>
                         </div>
                     </div>
-
 
                 @endforeach
 
