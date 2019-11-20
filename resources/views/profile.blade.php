@@ -14,9 +14,11 @@
             <div class="col-md-6">
                 <h3>Questions</h3>
                 @foreach($user->questions as $question)
-                    <div class="panel-default">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p>{{$question->title}}</p>
+                        </div>
                         <div class="panel-body">
-                            <h4>{{$question->title}}</h4>
                             <p>
                                 {{ $question->description }}
                             </p>
