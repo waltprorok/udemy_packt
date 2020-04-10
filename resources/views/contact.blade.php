@@ -4,6 +4,11 @@
 
     <div class="container">
         <div class="row">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="col-md-8 col-md-offset-2">
                 <h1>Contact Us</h1>
 
@@ -36,5 +41,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection
