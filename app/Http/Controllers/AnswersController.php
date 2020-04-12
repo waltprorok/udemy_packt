@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\NewAnswerSubmitted;
 use Illuminate\Http\Request;
 use App\Answer;
 use App\Question;
@@ -17,8 +18,8 @@ class AnswersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -33,9 +34,9 @@ class AnswersController extends Controller
 
         $question = Question::findOrFail($request->question_id);
         $question->answers()->save($answer);
+        $question->user->notify(new NewAnswerSubmitted($answer, $question, Auth::user()->name ));
 
         return redirect()->route('questions.show', $question->id);
-
     }
 
     /**
