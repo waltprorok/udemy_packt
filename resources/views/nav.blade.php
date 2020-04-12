@@ -15,9 +15,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ route('questions.index') }}">Home</a></li>
+{{--                <li class="active"><a href="{{ route('questions.index') }}">Home</a></li>--}}
                 <li><a href="{{ route('questions.index') }}">Recent</a></li>
-                <li><a href="#">Popular</a></li>
+{{--                <li><a href="#">Popular</a></li>--}}
+                <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <a href="{{ route('questions.create') }}" class="btn btn-primary" style="margin-top:5px;">Ask A Question</a>
@@ -31,10 +32,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li><a href="{{ route('profile', Auth::user()->id) }}">Profile</a></li>
                             <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
 

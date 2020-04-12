@@ -14,7 +14,8 @@
             <label for="description">More Information:</label>
             <textarea class="form-control" name="description" id="description" rows="4"></textarea>
 
-            <input type="submit" class="btn btn-primary" value="Submit Question"/>
+            <br />
+            <input type="submit" class="btn btn-primary " value="Submit Question"/>
         </form>
     </div>
 
