@@ -27,4 +27,4 @@ Auth::routes();
 
 Route::get('/profile/{user}', 'HomeController@profile')->name('profile');
 
-
+Route::get('/github/{username}', 'ApiController@github')->name('github');
