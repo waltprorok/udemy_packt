@@ -17,7 +17,7 @@ return [
     'nexmo' => [
         'key' => env('NEXMO_KEY'),
         'secret' => env('NEXMO_SECRET'),
-        'sms_from' => '15178792518'
+        'sms_from' => '15178792518',
     ],
 
     'mailgun' => [

@@ -29,10 +29,10 @@ class AnswersController extends Controller
         ]);
 
         $answer = new Answer();
-        $answer->content = $request->content;
+        $answer->content = $request->get('content');
         $answer->user()->associate(Auth::id());
 
-        $question = Question::findOrFail($request->question_id);
+        $question = Question::findOrFail($request->get('question_id'));
         $question->answers()->save($answer);
         $question->user->notify(new NewAnswerSubmitted($answer, $question, Auth::user()->name ));
 

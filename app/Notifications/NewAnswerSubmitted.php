@@ -54,6 +54,10 @@ class NewAnswerSubmitted extends Notification
                     ->line('Thank you for using LaravelAnswers!');
     }
 
+    /**
+     * @param $notifiable
+     * @return NexmoMessage
+     */
     public function toNexmo($notifiable)
     {
         return (new NexmoMessage)
