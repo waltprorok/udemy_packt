@@ -24,6 +24,7 @@ class PageController extends Controller
         ]);
 
         Mail::to('admin@domain.com')->send(new ContactFrom($request));
+
         return redirect()->route('contact')->with('success', 'The email was sent successfully');
     }
 }

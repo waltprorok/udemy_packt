@@ -34,11 +34,11 @@ class User extends Authenticatable
 
     public function questions()
     {
-        return $this->hasMany('App\Question');
+        return $this->hasMany(Question::class);
     }
 
     public function answers()
     {
-        return $this->hasMany('App\Answer');
+        return $this->hasMany(Answer::class);
     }
 }
